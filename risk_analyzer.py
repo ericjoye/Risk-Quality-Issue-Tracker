@@ -411,6 +411,110 @@ class RiskAnalyzer:
             )
         
         print(f"✓ Results exported to '{output_dir}/' directory\n")
+    
+    def generate_risk_register(self, output_path='risk_register.csv'):
+        """
+        Generate a comprehensive risk register CSV suitable for risk management processes.
+        
+        The risk register includes risk identification, assessment, and mitigation details
+        that can be used to support governance and compliance activities.
+        
+        Args:
+            output_path (str): Path to save the risk register CSV
+        """
+        risk_register = []
+        risk_id = 1
+        
+        # Get analysis results
+        high_risk = self.risk_summary.get('high_risk_categories')
+        recurring = self.risk_summary.get('recurring_by_category')
+        resolution = self.risk_summary.get('resolution_by_category')
+        
+        if high_risk is None:
+            print("⚠ Run complete analysis before generating risk register")
+            return
+        
+        # Generate risk register entries for each high-risk category
+        for category, row in high_risk.iterrows():
+            risk_score = row['Risk_Score']
+            incident_count = int(row['Incident_Count'])
+            recurrence_rate = row['Recurrence_Rate']
+            avg_resolution = row['Avg_Resolution_Hours']
+            
+            # Determine risk level based on risk score
+            if risk_score >= 50:
+                risk_level = 'Critical'
+                likelihood = 'Very High'
+            elif risk_score >= 30:
+                risk_level = 'High'
+                likelihood = 'High'
+            elif risk_score >= 15:
+                risk_level = 'Medium'
+                likelihood = 'Medium'
+            else:
+                risk_level = 'Low'
+                likelihood = 'Low'
+            
+            # Determine impact based on resolution time
+            if avg_resolution >= 40:
+                impact = 'Severe'
+            elif avg_resolution >= 20:
+                impact = 'Major'
+            elif avg_resolution >= 10:
+                impact = 'Moderate'
+            else:
+                impact = 'Minor'
+            
+            # Build risk description
+            is_recurring = category in recurring.index if recurring is not None else False
+            recurrence_text = f" with {recurrence_rate:.0f}% recurrence rate" if is_recurring else ""
+            
+            risk_desc = (f"Elevated incident rate in {category} category "
+                        f"({incident_count} incidents{recurrence_text}). "
+                        f"Average resolution time of {avg_resolution:.1f} hours indicates "
+                        f"potential resource or process constraints.")
+            
+            # Generate mitigation recommendations
+            mitigations = []
+            if recurrence_rate > 50:
+                mitigations.append("Conduct root cause analysis to address systemic issues")
+            if avg_resolution > 30:
+                mitigations.append("Review and optimize incident response procedures")
+            if incident_count > 8:
+                mitigations.append("Implement preventive controls to reduce incident frequency")
+            
+            mitigation_text = "; ".join(mitigations) if mitigations else "Monitor trends and maintain current controls"
+            
+            # Determine status
+            status = "Active - Mitigation Required" if risk_level in ['Critical', 'High'] else "Active - Monitoring"
+            
+            risk_register.append({
+                'Risk_ID': f'RISK-{risk_id:03d}',
+                'Category': category,
+                'Risk_Description': risk_desc,
+                'Risk_Level': risk_level,
+                'Likelihood': likelihood,
+                'Impact': impact,
+                'Risk_Score': f"{risk_score:.2f}",
+                'Incident_Count': incident_count,
+                'Avg_Resolution_Hours': f"{avg_resolution:.1f}",
+                'Recurrence_Rate_%': f"{recurrence_rate:.1f}",
+                'Mitigation_Strategy': mitigation_text,
+                'Status': status,
+                'Review_Date': datetime.now().strftime('%Y-%m-%d')
+            })
+            
+            risk_id += 1
+        
+        # Create DataFrame and export
+        register_df = pd.DataFrame(risk_register)
+        register_df.to_csv(output_path, index=False)
+        
+        print(f"✓ Risk register generated: '{output_path}'")
+        print(f"  Total risks identified: {len(risk_register)}")
+        print(f"  Critical/High risks: {len(register_df[register_df['Risk_Level'].isin(['Critical', 'High'])])}")
+        
+        return register_df
 
 
 def main():
@@ -426,7 +530,10 @@ def main():
     # Run complete analysis
     analyzer.run_complete_analysis()
     
-    # Export results (optional)
+    # Generate risk register
+    analyzer.generate_risk_register()
+    
+    # Export additional results (optional)
     # analyzer.export_results()
 
 

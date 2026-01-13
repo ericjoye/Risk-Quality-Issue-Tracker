@@ -23,7 +23,7 @@ A comprehensive analytics solution for identifying, analyzing, and mitigating op
 
 ## 🎯 Overview
 
-The Risk & Quality Issue Tracker is a Python-based analytics platform designed to help organizations proactively manage operational risks, ensure compliance, and improve service quality. By analyzing historical incident data, the system identifies patterns, calculates risk scores, and generates actionable insights for executive decision-making.
+The Risk & Quality Issue Tracker is a Python-based analytics platform designed to help organizations proactively manage operational risks and improve service quality. By analyzing historical incident data, the system identifies patterns, calculates risk scores, and generates actionable insights for executive decision-making. The outputs can be used to support compliance and governance activities.
 
 ## 🔍 The Risk Management Problem
 
@@ -57,7 +57,7 @@ This analytics platform transforms raw incident data into strategic intelligence
 4. **Measuring performance** through resolution time analysis
 5. **Providing transparency** via executive-level reporting
 
-## 🏢 How This Analysis Supports Compliance & Operations
+## 🏢 How This Analysis Can Support Compliance & Operations
 
 ### Compliance & Governance
 
@@ -71,13 +71,15 @@ Many regulatory frameworks require organizations to demonstrate systematic risk 
 - **ISO 27001**: Demands incident management and continuous improvement
 - **PCI DSS**: Requires security incident response and forensic analysis
 
-#### How This Tool Helps
+#### How This Tool Can Help
 
-✅ **Audit Trail**: Complete incident history with categorization and resolution tracking  
-✅ **Due Diligence**: Demonstrates systematic approach to risk identification  
-✅ **Corrective Action**: Identifies recurring issues requiring process improvements  
-✅ **Executive Reporting**: Provides compliance committees with risk visibility  
+✅ **Audit Trail**: Incident history that can be used to demonstrate systematic risk tracking  
+✅ **Due Diligence**: Analysis outputs can support risk identification processes  
+✅ **Corrective Action**: Helps identify recurring issues that may require process improvements  
+✅ **Executive Reporting**: Provides risk visibility for compliance committees  
 ✅ **Continuous Improvement**: Tracks resolution performance over time
+
+*Note: This tool provides analytics and reporting capabilities. Organizations should work with compliance professionals to map outputs to specific control requirements.*
 
 ### Operational Excellence
 
@@ -113,6 +115,7 @@ The executive risk summary enables leadership to:
 - **🔄 Recurrence Detection**: Flags systemic issues requiring root cause elimination
 - **⏱️ Resolution Metrics**: Calculates average, median, and range of resolution times
 - **📈 Severity Distribution**: Provides overview of incident severity across the organization
+- **📋 Risk Register**: Generates formal risk register CSV with risk levels, impacts, and mitigation strategies
 - **💡 Automated Recommendations**: Generates actionable insights based on data patterns
 - **📑 Executive Reporting**: Formatted, professional reports suitable for leadership review
 
@@ -355,6 +358,24 @@ Risk Score = (Frequency × Avg Severity × (1 + Recurrence Rate)) + (Resolution 
 
 ## 📈 Output & Reporting
 
+### Risk Register
+
+The tool automatically generates a **risk_register.csv** file containing:
+
+- **Risk ID**: Unique identifier for each risk
+- **Category**: Risk category (e.g., Data Security, System Downtime)
+- **Risk Description**: Detailed description of the risk based on incident patterns
+- **Risk Level**: Critical, High, Medium, or Low
+- **Likelihood**: Probability assessment based on incident frequency
+- **Impact**: Severity assessment based on resolution time
+- **Risk Score**: Quantitative risk score for prioritization
+- **Incident Metrics**: Count, average resolution time, recurrence rate
+- **Mitigation Strategy**: Recommended actions based on risk profile
+- **Status**: Current risk status (Active - Mitigation Required, Active - Monitoring)
+- **Review Date**: Date of risk assessment
+
+This risk register can be used as input for governance processes, compliance documentation, and risk management frameworks.
+
 ### Executive Risk Summary
 
 The main output is a formatted console report containing:
@@ -386,13 +407,14 @@ The main output is a formatted console report containing:
 
 ### Export Options
 
-Results can be exported to CSV for further analysis:
+The tool automatically generates a **risk_register.csv** during analysis. Additional results can be exported using:
 
 ```python
 analyzer.export_results(output_dir='analysis_results')
 ```
 
 **Generated Files**:
+- `risk_register.csv` (automatically generated)
 - `high_risk_categories.csv`
 - `resolution_by_category.csv`
 - `recurring_by_category.csv`
@@ -436,14 +458,13 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 For questions, issues, or suggestions:
 
 - Open an issue on GitHub
-- Contact the development team at mail@ericjoye.com
-- Review the documentation in the `/docs` folder
+- Contact me: mail@ericjoye.com
 
 ## 🙏 Acknowledgments
 
 - Built with best practices from risk management and data science communities
 - Inspired by real-world challenges in operational risk management
-- Designed to support compliance with international standards (ISO, SOX, GDPR, HIPAA)
+- Designed with consideration for international standards (ISO, SOX, GDPR, HIPAA)
 
 ---
 
