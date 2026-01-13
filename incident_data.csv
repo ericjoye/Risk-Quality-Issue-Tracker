@@ -1,0 +1,51 @@
+incident_id,category,severity,root_cause,resolution_time_hours,recurrence
+INC-001,Data Security,Critical,Inadequate access controls,48,Yes
+INC-002,System Downtime,High,Hardware failure,12,No
+INC-003,Data Quality,Medium,Manual entry error,6,Yes
+INC-004,Compliance Violation,Critical,Missing audit trail,72,No
+INC-005,Data Security,High,Phishing attack,24,Yes
+INC-006,Process Failure,Medium,Inadequate training,8,No
+INC-007,Data Quality,Low,System integration issue,4,Yes
+INC-008,System Downtime,Critical,Network outage,36,No
+INC-009,Data Security,Critical,Weak password policy,96,Yes
+INC-010,Compliance Violation,High,Documentation gap,18,Yes
+INC-011,Process Failure,Low,Communication breakdown,3,No
+INC-012,Data Quality,Medium,Data migration error,10,Yes
+INC-013,System Downtime,Medium,Software bug,14,No
+INC-014,Data Security,High,Unpatched vulnerability,20,Yes
+INC-015,Compliance Violation,Medium,Regulatory reporting delay,16,No
+INC-016,Process Failure,High,Workflow bottleneck,22,Yes
+INC-017,Data Quality,Critical,Database corruption,60,No
+INC-018,System Downtime,High,Capacity overload,18,Yes
+INC-019,Data Security,Medium,Unauthorized access attempt,8,Yes
+INC-020,Compliance Violation,Low,Minor policy deviation,2,No
+INC-021,Process Failure,Medium,Resource shortage,12,No
+INC-022,Data Quality,High,Duplicate records,15,Yes
+INC-023,System Downtime,Low,Scheduled maintenance overrun,5,No
+INC-024,Data Security,Critical,Data breach,120,No
+INC-025,Compliance Violation,High,Failed audit check,30,Yes
+INC-026,Process Failure,Critical,Critical process failure,45,No
+INC-027,Data Quality,Medium,Inconsistent formatting,7,Yes
+INC-028,System Downtime,High,Server crash,16,No
+INC-029,Data Security,High,Insider threat,40,No
+INC-030,Compliance Violation,Medium,License compliance issue,20,Yes
+INC-031,Process Failure,Low,Minor procedure deviation,4,No
+INC-032,Data Quality,High,Data validation error,11,Yes
+INC-033,System Downtime,Medium,Database timeout,9,Yes
+INC-034,Data Security,Medium,Security configuration error,13,Yes
+INC-035,Compliance Violation,Critical,GDPR violation,80,No
+INC-036,Process Failure,High,Approval workflow failure,19,Yes
+INC-037,Data Quality,Low,Missing metadata,3,No
+INC-038,System Downtime,Critical,Complete system failure,52,No
+INC-039,Data Security,High,Malware detection,28,Yes
+INC-040,Compliance Violation,Medium,Training compliance gap,14,No
+INC-041,Process Failure,Medium,Service level breach,10,Yes
+INC-042,Data Quality,Medium,Report accuracy issue,8,Yes
+INC-043,System Downtime,Low,Performance degradation,6,No
+INC-044,Data Security,Critical,Ransomware attack,144,No
+INC-045,Compliance Violation,High,SOX control failure,35,Yes
+INC-046,Process Failure,Low,Documentation error,2,No
+INC-047,Data Quality,High,ETL process failure,17,Yes
+INC-048,System Downtime,High,Load balancer failure,21,No
+INC-049,Data Security,Medium,VPN security issue,10,Yes
+INC-050,Compliance Violation,Low,Policy acknowledgment missing,1,No
