@@ -11,6 +11,7 @@ A comprehensive analytics solution for identifying, analyzing, and mitigating op
 - [Overview](#overview)
 - [The Risk Management Problem](#the-risk-management-problem)
 - [How This Analysis Can Support Compliance & Operations](#how-this-analysis-can-support-compliance--operations)
+- [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Data Structure](#data-structure)
