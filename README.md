@@ -8,18 +8,18 @@ A comprehensive analytics solution for identifying, analyzing, and mitigating op
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-- [The Risk Management Problem](#the-risk-management-problem)
-- [How This Analysis Can Support Compliance & Operations](#how-this-analysis-can-support-compliance--operations)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Data Structure](#data-structure)
-- [Analysis Components](#analysis-components)
-- [Real-World Applications](#real-world-applications)
-- [Output & Reporting](#output--reporting)
-- [Contributing](#contributing)
-- [License](#license)
+- [Overview](#-overview)
+- [The Risk Management Problem](#-the-risk-management-problem)
+- [How This Analysis Can Support Compliance & Operations](#-how-this-analysis-can-support-compliance--operations)
+- [Features](#-features)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Data Structure](#-data-structure)
+- [Analysis Components](#-analysis-components)
+- [Real-World Applications](#-real-world-applications)
+- [Output & Reporting](#-output--reporting)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ## 🎯 Overview
 
